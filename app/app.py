@@ -62,7 +62,14 @@ def check_answer():
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     decodedObjects = decode(img)
     for obj in decodedObjects:
-        cv2.putText(img, str(obj.data), (50, 50), cv2.FONT_HERSHEY_PLAIN, 1, (255, 0, 0), 1)
+        webaddress=str(obj.data)
+    
+    if webaddress.find("http://answer:") >0:
+        webaddress = webaddress[16:-1] # remove the first 16 and last character
+        if webaddress=="cat":
+            cv2.putText(img, str("Correct"), (50, 50), cv2.FONT_HERSHEY_PLAIN, 1, (255, 0, 0), 1)
+        else:
+            cv2.putText(img, str("Wrong"), (50, 50), cv2.FONT_HERSHEY_PLAIN, 1, (255, 0, 0), 1)
     
     _, im_arr = cv2.imencode('.png', img)
     im_bytes = im_arr.tobytes()
