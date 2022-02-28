@@ -61,8 +61,8 @@ def check_answer():
     nparr = np.frombuffer(encoded_data, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     decodedObjects = decode(img)
-    for obj in decodedObjects:
-        cv2.putText(img, str(obj.data), (50, 50), font, 2, (255, 0, 0), 3)
+    #for obj in decodedObjects:
+        #cv2.putText(img, str(obj.data), (50, 50), font, 2, (255, 0, 0), 3)
     
     _, im_arr = cv2.imencode('.png', img)
     im_bytes = im_arr.tobytes()
