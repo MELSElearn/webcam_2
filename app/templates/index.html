@@ -34,7 +34,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script>
 var video = document.querySelector("#videoElement");
-var click_button = document.querySelector("#click-photo");
 var click_button2 = document.querySelector("#butajax");	
 var click_button3 = document.querySelector("#butajax2");	
 var canvas = document.querySelector("#canvas");
@@ -83,18 +82,6 @@ if (navigator.mediaDevices.getUserMedia) {
       console.log("Something went wrong!");
     });
 }
-
-click_button.addEventListener('click', function() {
-	canvas.style.display="block";
-   	canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-   	let image_data_url = canvas.toDataURL('image/jpeg');
-
-   	// data url of the image
-   	console.log(image_data_url);
-	document.getElementById("txt64").value = image_data_url;
-	canvas.style.display="none";
-	document.getElementById("myForm").submit();
-});
 click_button2.addEventListener('click', function() {
 	
 	canvas.style.display="block";
@@ -111,16 +98,6 @@ click_button2.addEventListener('click', function() {
 			document.getElementById("mypic").src="data:image/jpeg;base64,"+data;
 		}
 	       });
-	/*
-	if (counter == 0)
-	{
-		counter = 1;
-	}else
-	{
-		counter = 0;
-	}
-	*/
-	
 });
 click_button3.addEventListener('click', function() {
 	
