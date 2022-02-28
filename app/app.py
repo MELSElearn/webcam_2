@@ -62,7 +62,7 @@ def check_answer():
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     decodedObjects = decode(img)
     for obj in decodedObjects:
-        cv2.putText(img, str(obj.data), (50, 50), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 0), 3)
+        cv2.putText(img, str(obj.data), (50, 50), cv2.FONT_HERSHEY_PLAIN, 1, (255, 0, 0), 1)
     
     _, im_arr = cv2.imencode('.png', img)
     im_bytes = im_arr.tobytes()
