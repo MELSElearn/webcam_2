@@ -62,7 +62,7 @@ def check_answer():
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     decodedObjects = decode(img)
     for obj in decodedObjects:
-        cv2.putText(img,f'{int(totalfingers)}',(50,70), cv2.FONT_HERSHEY_PLAIN,5,(250,0,0),5)
+        cv2.putText(img,f'{int(10)}',(50,70), cv2.FONT_HERSHEY_PLAIN,5,(250,0,0),5)
     
     _, im_arr = cv2.imencode('.png', img)
     im_bytes = im_arr.tobytes()
