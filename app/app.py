@@ -23,6 +23,7 @@ def check_answer():
     encoded_data = b64decode(encoded_data)
     nparr = np.frombuffer(encoded_data, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    webaddress =""
     decodedObjects = decode(img)
     for obj in decodedObjects:
         webaddress=str(obj.data)
